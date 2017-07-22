@@ -29,7 +29,7 @@
         "stof/doctrine-extensions-bundle": "~1.1",
         "mopa/bootstrap-bundle": "~3.1",
         "twbs/bootstrap": "~3.3",
-        "symfony-cmf/routing-bundle": "1.1.0",
+        "symfony-cmf/routing-bundle": "~2.0",
         "jms/serializer-bundle": "0.13",
         "ibrows/sonata-admin-annotation-bundle": "2.*",
         "ibrows/sonata-translation-bundle": "1.*",
