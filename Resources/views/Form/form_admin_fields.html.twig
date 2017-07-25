@@ -901,7 +901,7 @@ file that was distributed with this source code.
 
             {% set config = config|merge({'language': app.request.locale}) %}
 
-            {{ ckeditor_replace(id, config) }}
+            {{ ckeditor_template(id, config) }}
         </script>
     {% endif %}
 {% endblock %}
