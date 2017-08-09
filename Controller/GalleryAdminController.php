@@ -9,6 +9,7 @@
  */
 namespace Networking\InitCmsBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Sonata\MediaBundle\Controller\GalleryAdminController as SonataGalleryAdminController;
@@ -23,17 +24,15 @@ class GalleryAdminController extends SonataGalleryAdminController
     /**
      * return the Response object associated to the list action
      *
+     * @param \Symfony\Component\HttpFoundation\Request $request
      * @return Response
      * @throws \Symfony\Component\Security\Core\Exception\AccessDeniedException
      */
-    public function listAction()
+    public function listAction(Request $request = null)
     {
         if (false === $this->admin->isGranted('LIST')) {
             throw new AccessDeniedException();
         }
-
-        /** @var \Symfony\Component\HttpFoundation\Request $request */
-        $request = $this->container->get('request_stack')->getCurrentRequest();
 
         /** @var \Sonata\MediaBundle\Provider\Pool $mediaPool */
         $mediaPool = $this->container->get('sonata.media.pool');

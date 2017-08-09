@@ -31,7 +31,6 @@ class TranslatableTextBlockService extends BaseBlockService
      */
     public function execute(BlockContextInterface $blockContext, Response $response = null)
     {
-
         return $this->renderResponse('NetworkingInitCmsBundle:Block:block_translatable_text.html.twig', array(
                     'block'     => $blockContext->getBlock(),
                     'settings'  => $blockContext->getSettings()

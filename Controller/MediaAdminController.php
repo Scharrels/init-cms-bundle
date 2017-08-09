@@ -70,7 +70,7 @@ class MediaAdminController extends SonataMediaAdminController
      * @throws AccessDeniedException
      * @return \Symfony\Bundle\FrameworkBundle\Controller\Response|\Symfony\Component\HttpFoundation\Response
      */
-    public function createAction()
+    public function createAction(Request $request = null)
     {
         if (false === $this->admin->isGranted('CREATE')) {
             throw new AccessDeniedException();
@@ -92,7 +92,7 @@ class MediaAdminController extends SonataMediaAdminController
             );
         }
 
-        return parent::createAction();
+        return parent::createAction($request);
     }
 
     /**
@@ -290,16 +290,15 @@ class MediaAdminController extends SonataMediaAdminController
     /**
      * return the Response object associated to the list action
      *
+     * @param \Symfony\Component\HttpFoundation\Request $request
      * @return \Symfony\Bundle\FrameworkBundle\Controller\Response|\Symfony\Component\HttpFoundation\Response
      * @throws AccessDeniedException
      */
-    public function listAction()
+    public function listAction(Request $request = null)
     {
         if (false === $this->admin->isGranted('LIST')) {
             throw new AccessDeniedException();
         }
-        /** @var Request $request */
-        $request = $this->container->get('request_stack')->getCurrentRequest();
         $galleryListMode = $request->get('pcode') ? true : false;
 
         $datagrid = $this->admin->getDatagrid();

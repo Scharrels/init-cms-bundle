@@ -67,6 +67,7 @@ class MediaMultiUploadController extends AbstractController
         $media->setEnabled(true);
         $media->setName($file->getClientOriginalName());
         $media->setBinaryContent($file);
+
         $tags = explode(',', $request->get('tags'));
         $tagCollection = new ArrayCollection();
         foreach($tags as $tagId){
