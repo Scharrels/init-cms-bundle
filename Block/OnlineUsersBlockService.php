@@ -18,7 +18,7 @@ use Sonata\CoreBundle\Validator\ErrorElement;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Sonata\BlockBundle\Block\BlockContextInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * Class OnlineUsersBlockService
@@ -89,7 +89,7 @@ class OnlineUsersBlockService extends BaseBlockService
     /**
      * {@inheritdoc}
      */
-    public function setDefaultSettings(OptionsResolverInterface $resolver)
+    public function configureSettings(OptionsResolver $resolver)
     {
         $resolver->setDefaults(
             array(
