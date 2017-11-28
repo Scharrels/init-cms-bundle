@@ -10,7 +10,7 @@
 
 namespace Networking\InitCmsBundle\Block;
 
-use Sonata\BlockBundle\Block\BaseBlockService;
+use Sonata\BlockBundle\Block\Service\AbstractAdminBlockService;
 use Sonata\BlockBundle\Model\BlockInterface;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\CoreBundle\Validator\ErrorElement;
@@ -23,7 +23,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  * @package Networking\InitCmsBundle\Block
  * @author Yorkie Chadwick <y.chadwick@networking.ch>
  */
-class TranslatableTextBlockService extends BaseBlockService
+class TranslatableTextBlockService extends AbstractAdminBlockService
 {
 
     /**

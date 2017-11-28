@@ -13,7 +13,7 @@ namespace Networking\InitCmsBundle\Block;
 use Doctrine\ORM\Query;
 use Networking\InitCmsBundle\Model\PageInterface;
 use Networking\InitCmsBundle\Model\PageManagerInterface;
-use Sonata\BlockBundle\Block\BaseBlockService;
+use Sonata\BlockBundle\Block\Service\AbstractAdminBlockService;
 use Sonata\BlockBundle\Model\BlockInterface;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\CoreBundle\Validator\ErrorElement;
@@ -27,7 +27,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  * @package Networking\InitCmsBundle\Block
  * @author Yorkie Chadwick <y.chadwick@networking.ch>
  */
-class PagesBlockService extends BaseBlockService
+class PagesBlockService extends AbstractAdminBlockService
 {
     /**
      * @var PageManagerInterface $em
