@@ -12,7 +12,6 @@
 namespace Networking\InitCmsBundle\Model;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Form\DataTransformer\ArrayToModelTransformer;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;

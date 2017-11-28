@@ -10,7 +10,7 @@
 
 namespace Networking\InitCmsBundle\Admin;
 
-use Sonata\AdminBundle\Admin\Admin;
+use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
@@ -24,7 +24,7 @@ use Symfony\Component\Intl\Intl;
  * @package Networking\InitCmsBundle\Admin
  * @author Yorkie Chadwick <y.chadwick@networking.ch>
  */
-abstract class BaseAdmin extends Admin
+abstract class BaseAdmin extends AbstractAdmin
 {
     /**
      * @var array $languages

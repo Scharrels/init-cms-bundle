@@ -11,7 +11,7 @@
 namespace Networking\InitCmsBundle\Admin\Model;
 
 use Doctrine\ORM\EntityRepository;
-use Sonata\AdminBundle\Admin\Admin;
+use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
@@ -24,7 +24,7 @@ use Sonata\DoctrineORMAdminBundle\Datagrid\ProxyQuery;
  * @package Networking\InitCmsBundle\Admin\Model
  * @author Yorkie Chadwick <y.chadwick@networking.ch>
  */
-class TagAdmin extends Admin
+class TagAdmin extends AbstractAdmin
 {
 
     /**
