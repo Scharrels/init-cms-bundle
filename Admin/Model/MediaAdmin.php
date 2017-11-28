@@ -17,6 +17,7 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
 use Sonata\MediaBundle\Admin\BaseMediaAdmin as Admin;
 use Sonata\MediaBundle\Provider\FileProvider;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
  * Class MediaAdmin
@@ -315,7 +316,7 @@ abstract class MediaAdmin extends Admin
     /**
      * {@inheritdoc}
      */
-    public function generateUrl($name, array $parameters = array(), $absolute = false)
+    public function generateUrl($name, array $parameters = array(), $absolute = UrlGeneratorInterface::ABSOLUTE_PATH)
     {
         try {
             if ($this->getRequest()->get('pcode')) {
