@@ -74,15 +74,15 @@ abstract class LayoutBlockAdmin extends BaseAdmin
         $formMapper
             ->add(
                 'zone',
-                'hidden'
+                'Symfony\Component\Form\Extension\Core\Type\HiddenType'
             )
             ->add(
-                $formMapper->getFormBuilder()->create('page', 'hidden')
+                $formMapper->getFormBuilder()->create('page', 'Symfony\Component\Form\Extension\Core\Type\HiddenType')
                     ->addModelTransformer($transformer),
-                'hidden'
+                'Symfony\Component\Form\Extension\Core\Type\HiddenType'
             )
-            ->add('classType', 'hidden')
-            ->add('sortOrder', 'hidden');
+            ->add('classType', 'Symfony\Component\Form\Extension\Core\Type\HiddenType')
+            ->add('sortOrder', 'Symfony\Component\Form\Extension\Core\Type\HiddenType');
     }
 
     /**

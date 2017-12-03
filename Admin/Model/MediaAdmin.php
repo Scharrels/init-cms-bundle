@@ -387,7 +387,7 @@ abstract class MediaAdmin extends Admin
         if (in_array($media->getProviderName(), $this->localisedMediaProviders)) {
             $formMapper->add(
                 'locale',
-                'choice',
+                'Symfony\Component\Form\Extension\Core\Type\ChoiceType',
                 array(
                     'choices' => $this->getLocaleChoices(),
                 )

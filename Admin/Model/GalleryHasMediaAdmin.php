@@ -40,7 +40,7 @@ class GalleryHasMediaAdmin extends Admin
                 'media_entity_type',
                 array('required' => false, 'context' => $context))
             ->add('enabled', null, array('required' => false))
-            ->add('position', 'hidden')
+            ->add('position', 'Symfony\Component\Form\Extension\Core\Type\HiddenType')
         ;
     }
 }

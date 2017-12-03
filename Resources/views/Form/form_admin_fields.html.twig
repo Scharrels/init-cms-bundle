@@ -139,7 +139,7 @@ file that was distributed with this source code.
     {% if sonata_admin.field_description.mappingtype == 4 %}
         {{ block('sonata_admin_orm_one_to_many_widget') }}
     {% else %}
-        INVALID MODE : {{ id }} - type : sonata_type_collection - mapping : {{ sonata_admin.field_description.mappingtype }}
+        INVALID MODE : {{ id }} - type : Sonata\CoreBundle\Form\Type\CollectionType - mapping : {{ sonata_admin.field_description.mappingtype }}
     {% endif %}
 {% endblock %}
 

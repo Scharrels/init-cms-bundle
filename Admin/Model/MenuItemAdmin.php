@@ -140,14 +140,14 @@ abstract class MenuItemAdmin extends BaseAdmin
         }
 
         $formMapper
-            ->add('locale', 'hidden', array('data' => $locale))
+            ->add('locale', 'Symfony\Component\Form\Extension\Core\Type\HiddenType', array('data' => $locale))
             ->add('name', null, array('horizontal' => true));
 
 
         if ($this->isRoot) {
             $formMapper
                 ->add('description', null, array('horizontal' => true))
-                ->add('isRoot', 'hidden', array('data' => true))
+                ->add('isRoot', 'Symfony\Component\Form\Extension\Core\Type\HiddenType', array('data' => true))
                 ->end();
         } else {
             $formMapper->end();
@@ -219,7 +219,7 @@ abstract class MenuItemAdmin extends BaseAdmin
                 )
                 ->add(
                     'link_target',
-                    'choice',
+                    'Symfony\Component\Form\Extension\Core\Type\ChoiceType',
                     array(
                         'horizontal' => true,
                         'choices' => $this->getTranslatedLinkTargets(),
@@ -228,7 +228,7 @@ abstract class MenuItemAdmin extends BaseAdmin
                 )
                 ->add('link_class', 'text', array('horizontal' => true,'required' => false))
                 ->add('link_rel', 'text', array('horizontal' => true, 'required' => false))
-                ->add('hidden', null, array('horizontal' => true, 'required' => false))
+                ->add('Symfony\Component\Form\Extension\Core\Type\HiddenType', null, array('horizontal' => true, 'required' => false))
                 ->end();
 
             $entityManager = $this->getContainer()->get('Doctrine')->getManager();
@@ -237,12 +237,12 @@ abstract class MenuItemAdmin extends BaseAdmin
 
             $menuField = $formMapper->getFormBuilder()->create(
                 'menu',
-                'hidden',
+                'Symfony\Component\Form\Extension\Core\Type\HiddenType',
                 array('data' => $root, 'data_class' => null)
             );
             $menuField->addModelTransformer($transformer);
             $formMapper
-                ->add($menuField, 'hidden');
+                ->add($menuField, 'Symfony\Component\Form\Extension\Core\Type\HiddenType');
         }
     }
 

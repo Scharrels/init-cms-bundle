@@ -75,12 +75,12 @@ class GalleryAdmin extends SonataGalleryAdmin
 
         $formMapper
             ->add('enabled', null, array('required' => true))
-            ->add('context', 'hidden')
+            ->add('context', 'Symfony\Component\Form\Extension\Core\Type\HiddenType')
             ->add('name')
-            ->add('defaultFormat', 'choice', array('choices' => $formats))
+            ->add('defaultFormat', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', array('choices' => $formats))
             ->add(
                 'galleryHasMedias',
-                'sonata_type_collection',
+                'Sonata\CoreBundle\Form\Type\CollectionType',
                 array(
                     'cascade_validation' => true,
                 ),

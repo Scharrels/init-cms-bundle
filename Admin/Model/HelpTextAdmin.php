@@ -74,7 +74,7 @@ abstract class HelpTextAdmin extends BaseAdmin
         $formMapper
             ->add(
                 'locale',
-                'choice',
+                'Symfony\Component\Form\Extension\Core\Type\ChoiceType',
                 array(
                     'choices' => $this->getLocaleChoices(),
                     'preferred_choices' => array($locale)

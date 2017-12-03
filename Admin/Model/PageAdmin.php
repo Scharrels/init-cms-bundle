@@ -174,7 +174,7 @@ abstract class PageAdmin extends BaseAdmin
                 ->with('page_content')
                 ->add(
                     'layoutBlock',
-                    'sonata_type_collection',
+                    'Sonata\CoreBundle\Form\Type\CollectionType',
                     array(
                         'required' => true,
                         'label' => false,
@@ -203,7 +203,7 @@ abstract class PageAdmin extends BaseAdmin
             $formMapper
                 ->add(
                     'locale',
-                    'choice',
+                    'Symfony\Component\Form\Extension\Core\Type\ChoiceType',
                     array(
                         'choices' => $this->getLocaleChoices(),
                         'preferred_choices' => array($this->pageLocale),
@@ -391,7 +391,7 @@ abstract class PageAdmin extends BaseAdmin
                         'getByLocale'
                     )
                 ),
-                'choice',
+                'Symfony\Component\Form\Extension\Core\Type\ChoiceType',
                 array(
                     'empty_value' => false,
                     'choices' => $this->getLocaleChoices(),
