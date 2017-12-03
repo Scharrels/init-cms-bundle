@@ -36,7 +36,7 @@ class JSNode extends \Twig_Node
     {
         $compiler
                 ->addDebugInfo($this)
-                ->write("print \$this->env->getExtension('networking_init_cms_helper')->")
+                ->write("print \$this->env->getExtension('\Networking\InitCmsBundle\Twig\Extension\NetworkingHelperExtension')->")
                 ->raw($this->getNode('method')->getAttribute('value'))
                 ->raw("();\n");
         ;
