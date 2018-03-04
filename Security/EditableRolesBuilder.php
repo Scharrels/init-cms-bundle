@@ -17,7 +17,7 @@ class EditableRolesBuilder extends BaseRolesBuilder
     /**
      * @return array
      */
-    public function getRoles()
+    public function getRoles($domain= false, $expanded = true)
     {
         $roles = array();
         $rolesReadOnly = array();
